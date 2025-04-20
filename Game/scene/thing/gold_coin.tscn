@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dii7jt8vn02wj"]
+
+[ext_resource type="SpriteFrames" uid="uid://b4olqpsafsxfi" path="res://res/animation/frame_gold_coin.tres" id="1_gj861"]
+
+[node name="GoldCoin" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_gj861")
+autoplay = "default"

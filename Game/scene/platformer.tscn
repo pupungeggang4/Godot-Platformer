@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://lx8cg2uj7w3i"]
+
+[ext_resource type="Texture2D" uid="uid://dwcmtdfpxl8gc" path="res://res/image/BgCave.png" id="1_s8xsi"]
+[ext_resource type="PackedScene" uid="uid://dii7jt8vn02wj" path="res://scene/thing/gold_coin.tscn" id="2_biw0f"]
+[ext_resource type="PackedScene" uid="uid://l75m2d4iypsb" path="res://scene/thing/silver_coin.tscn" id="3_tktlr"]
+
+[node name="Platformer" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_s8xsi")
+centered = false
+
+[node name="TileMapTerrain" type="TileMapLayer" parent="."]
+
+[node name="Thing" type="Node2D" parent="."]
+
+[node name="GoldCoin" parent="." instance=ExtResource("2_biw0f")]
+position = Vector2(20, 20)
+
+[node name="SilverCoin" parent="." instance=ExtResource("3_tktlr")]
+position = Vector2(60, 60)

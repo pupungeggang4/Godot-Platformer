@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://b4olqpsafsxfi"]
+
+[ext_resource type="Texture2D" uid="uid://c7tiylweuvlyb" path="res://res/image/SpriteGoldCoin.png" id="1_vy6qu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn2gt"]
+atlas = ExtResource("1_vy6qu")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wbrw"]
+atlas = ExtResource("1_vy6qu")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qchpa"]
+atlas = ExtResource("1_vy6qu")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7vel"]
+atlas = ExtResource("1_vy6qu")
+region = Rect2(120, 0, 40, 40)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn2gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wbrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qchpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7vel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

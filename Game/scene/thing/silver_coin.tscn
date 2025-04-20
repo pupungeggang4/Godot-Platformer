@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://l75m2d4iypsb"]
+
+[ext_resource type="SpriteFrames" uid="uid://cfuqfkgchuxm2" path="res://res/animation/frame_sliver_coin.tres" id="1_45rmu"]
+
+[node name="SilverCoin" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_45rmu")
+autoplay = "default"
