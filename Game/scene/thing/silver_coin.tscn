@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://l75m2d4iypsb"]
+[gd_scene load_steps=4 format=3 uid="uid://l75m2d4iypsb"]
 
 [ext_resource type="SpriteFrames" uid="uid://cfuqfkgchuxm2" path="res://res/animation/frame_sliver_coin.tres" id="1_45rmu"]
+[ext_resource type="Script" uid="uid://com1osvwi5rxh" path="res://script/thing/sliver_coin.gd" id="1_hu625"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45rmu"]
+size = Vector2(40, 40)
 
 [node name="SilverCoin" type="Node2D"]
+script = ExtResource("1_hu625")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_45rmu")
 autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_45rmu")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,21 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://lx8cg2uj7w3i"]
+[gd_scene load_steps=8 format=3 uid="uid://lx8cg2uj7w3i"]
 
+[ext_resource type="Script" uid="uid://b6b8o3bvsw67n" path="res://script/camera_2d.gd" id="1_5v6p3"]
 [ext_resource type="Texture2D" uid="uid://dwcmtdfpxl8gc" path="res://res/image/BgCave.png" id="1_s8xsi"]
 [ext_resource type="PackedScene" uid="uid://dii7jt8vn02wj" path="res://scene/thing/gold_coin.tscn" id="2_biw0f"]
 [ext_resource type="PackedScene" uid="uid://l75m2d4iypsb" path="res://scene/thing/silver_coin.tscn" id="3_tktlr"]
+[ext_resource type="PackedScene" uid="uid://biur7qs2hvj3t" path="res://scene/thing/player.tscn" id="4_cao04"]
+[ext_resource type="Script" uid="uid://baxroxl5aba5n" path="res://script/hud.gd" id="6_x1uep"]
+[ext_resource type="Theme" uid="uid://dj6nvbkiidiy3" path="res://res/font_neodgm.tres" id="7_h2270"]
 
 [node name="Platformer" type="Node2D"]
-
-[node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_s8xsi")
-centered = false
 
 [node name="TileMapTerrain" type="TileMapLayer" parent="."]
 
 [node name="Thing" type="Node2D" parent="."]
 
-[node name="GoldCoin" parent="." instance=ExtResource("2_biw0f")]
+[node name="GoldCoin" parent="Thing" instance=ExtResource("2_biw0f")]
 position = Vector2(20, 20)
 
-[node name="SilverCoin" parent="." instance=ExtResource("3_tktlr")]
+[node name="SilverCoin" parent="Thing" instance=ExtResource("3_tktlr")]
 position = Vector2(60, 60)
+
+[node name="Player" parent="." instance=ExtResource("4_cao04")]
+position = Vector2(148, 40)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_5v6p3")
+
+[node name="Background" type="Sprite2D" parent="Camera2D"]
+z_index = -1
+texture = ExtResource("1_s8xsi")
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_x1uep")
+
+[node name="TextGold" type="Label" parent="Camera2D/Control"]
+offset_left = -620.0
+offset_top = -380.0
+offset_right = -580.0
+offset_bottom = -348.0
+theme = ExtResource("7_h2270")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
